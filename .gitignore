@@ -1,0 +1,4 @@
+*.o
+*.a
+Philosophers
+valgrind_result.log
