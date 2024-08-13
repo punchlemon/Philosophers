@@ -59,8 +59,8 @@ norm:
 						@$(call check_norminette, $(LIB_DIR))
 
 define check_norminette
-						@if norminette $1 | grep -q Error!; then \
-							norminette $1 | grep Error! | sed -E 's/^[^\\]*\\([^\\]*)\\.*(.{7})/\1\2/'; \
+						@if norminette $1 | grep -q Error; then \
+							norminette $1 | grep Error; \
 						else \
 						echo "$1: OK!"; \
 						fi
