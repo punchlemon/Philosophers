@@ -15,12 +15,28 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
+# define rune int32_t
 
 typedef struct s_string
 {
 	void			*addr;
 	size_t			len;
 }	t_string;
+
+typedef struct s_string_slice
+{
+	t_string		*strings;
+	size_t			len;
+	size_t			cap;
+}	t_string_slice;
+
+typedef struct s_rune_slice
+{
+	rune			*runes;
+	size_t			len;
+	size_t			cap;
+}	t_rune_slice;
 
 typedef struct s_error
 {
