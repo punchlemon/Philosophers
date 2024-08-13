@@ -23,7 +23,7 @@ typedef struct s_string
 
 typedef struct s_error
 {
-	t_string	*errorString;
+	t_string	*error_string;
 }	t_error;
 
 typedef struct s_mem

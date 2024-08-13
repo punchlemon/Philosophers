@@ -18,7 +18,7 @@ t_error	*create_error(t_mem *m, char *src)
 
 	append_mem(m, err = malloc(sizeof(t_error)));
 	if (err)
-		err->errorString = create_string(m, src);
+		err->error_string = create_string(m, src);
 	return (err);
 }
 
@@ -26,8 +26,8 @@ void	print_error(t_error *err)
 {
 	if (!err)
 		put("err is NULL.\n");
-	else if (!err->errorString)
+	else if (!err->error_string)
 		put("errorStrint is NULL.\n");
 	else
-		put(err->errorString);
+		put(err->error_string);
 }
