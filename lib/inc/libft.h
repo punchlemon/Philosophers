@@ -58,7 +58,7 @@ typedef struct s_mem
 
 // bytes function
 void	copy_bytes(void *dst, void *src, size_t bytes);
-int		compare_n_1byte(int8_t *a, int8_t *b, size_t n);
+int		compare_n_1byte(uint8_t *a, uint8_t *b, size_t n);
 int		compare_bytes(void *a, void *b, size_t bytes);
 
 // string function

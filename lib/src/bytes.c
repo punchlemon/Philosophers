@@ -15,11 +15,9 @@
 void	copy_bytes(void *dst, void *src, size_t bytes)
 {
 	size_t	n8;
-	size_t	n4;
 	size_t	n1;
 
 	n8 = bytes >> 3;
-	n4 = bytes & 0b100;
 	n1 = bytes & 0b11;
 	while (n8--)
 	{
@@ -27,7 +25,7 @@ void	copy_bytes(void *dst, void *src, size_t bytes)
 		dst += 8;
 		src += 8;
 	}
-	if (n4)
+	if (bytes & 0b100)
 	{
 		*(uint32_t *)dst = *(uint32_t *)src;
 		dst += 4;
@@ -37,12 +35,16 @@ void	copy_bytes(void *dst, void *src, size_t bytes)
 		*(uint8_t *)dst++ = *(uint8_t *)src++;
 }
 
-int	compare_n_1byte(int8_t *a, int8_t *b, size_t n)
+int	compare_n_1byte(uint8_t *a, uint8_t *b, size_t n)
 {
 	while (n--)
 	{
-		if (*a != *b)
-			return (((*a > *b) << 1) - 1);
+		if (*a > *b)
+			return (1);
+		else if (*a < *b)
+			return (-1);
+		a++;
+		b++;
 	}
 	return (0);
 }
@@ -50,25 +52,25 @@ int	compare_n_1byte(int8_t *a, int8_t *b, size_t n)
 int	compare_bytes(void *a, void *b, size_t bytes)
 {
 	size_t	n8;
-	size_t	n4;
-	size_t	n1;
 
 	n8 = bytes >> 3;
-	n4 = bytes & 0b100;
-	n1 = bytes & 0b11;
 	while (n8--)
 	{
-		if ((uint64_t *)a != (uint64_t *)b)
-			return (((*(uint64_t *)a > *(uint64_t *)b) << 1) - 1);
+		if (*(uint64_t *)a > *(uint64_t *)b)
+			return (1);
+		else if (*(uint64_t *)a < *(uint64_t *)b)
+			return (-1);
 		a += 8;
 		b += 8;
 	}
-	if (n4)
+	if (bytes & 0b100)
 	{
-		if (*(uint32_t *)a != *(uint32_t *)b)
-			return (((*(uint32_t *)a > *(uint32_t *)b) << 1) - 1);
+		if (*(uint32_t *)a > *(uint32_t *)b)
+			return (1);
+		else if (*(uint32_t *)a < *(uint32_t *)b)
+			return (-1);
 		a += 4;
 		b += 4;
 	}
-	return (compare_n_1byte((int8_t *)a, (int8_t *)b, n1));
+	return (compare_n_1byte((uint8_t *)a, (uint8_t *)b, bytes & 0b11));
 }

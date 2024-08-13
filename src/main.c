@@ -21,24 +21,8 @@ int	main(void)
 	m = create_mem();
 	if (!m)
 		return (put("Can't allocate memory!\n"), 1);
-	s1 = create_string(m, "hello");
-	s2 = create_string(m, "hella");
-	if (compare_string(s1, s2) == 0)
-		put("same!\n");
-	else if (compare_string(s1, s2) == 1)
-	{
-		print_string(s1);
-		put(" is bigger than ");
-		print_string(s2);
-		put(".\n");
-	}
-	else
-	{
-		print_string(s2);
-		put(" is bigger than ");
-		print_string(s1);
-		put(".\n");
-	}
+	s1 = create_string(m, "helo");
+	s2 = create_string(m, "hela");
 	delete_mem(m);
 	return (0);
 }

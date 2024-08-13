@@ -44,5 +44,5 @@ int	compare_string(t_string *a, t_string *b)
 	else if (a->len < b->len)
 		return (-1);
 	else
-		return (compare_bytes(a, b, a->len));
+		return (compare_bytes(a->addr, b->addr, a->len));
 }
