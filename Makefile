@@ -62,7 +62,7 @@ define check_norminette
 						@if norminette $1 | grep -q Error; then \
 							norminette $1 | grep Error; \
 						else \
-						echo "$1: OK!"; \
+							echo "$1: OK!"; \
 						fi
 endef
 
