@@ -24,9 +24,14 @@ size_t	str_len(char *src)
 	return (len);
 }
 
-int	put(char *src)
+int	put_fd(int fd, char *src)
 {
 	if (!src)
-		return (write(1, "(null)\n", 7));
-	return (write(1, src, str_len(src)));
+		return (write(fd, "(null)\n", 7));
+	return (write(fd, src, str_len(src)));
+}
+
+int	put(char *src)
+{
+	return (put_fd(1, src));
 }
