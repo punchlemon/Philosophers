@@ -4,6 +4,8 @@ SRC_DIR				=	src
 OBJ_DIR				=	obj
 
 FILES				=	 \
+						error \
+						bytes \
 						mem \
 						put \
 						string \
