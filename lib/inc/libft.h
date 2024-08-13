@@ -12,18 +12,19 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stdlib.h>
 # include <unistd.h>
 
 typedef struct s_string
 {
-	void	*addr;
-	size_t	len;
+	void			*addr;
+	size_t			len;
 }	t_string;
 
 typedef struct s_error
 {
-	t_string	*error_string;
+	t_string		*error_string;
 }	t_error;
 
 typedef struct s_mem
@@ -35,8 +36,8 @@ typedef struct s_mem
 
 // typedef struct s_string_err
 // {
-// 	t_string	*string;
-// 	t_error		*err;
+// 	t_string		*string;
+// 	t_error			*err;
 // }	t_string_err;
 
 // string function
