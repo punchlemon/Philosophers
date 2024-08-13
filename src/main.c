@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Philosophers.h"
-#include <stdio.h>
 
 int	main(void)
 {
@@ -25,11 +24,21 @@ int	main(void)
 	s1 = create_string(m, "hello");
 	s2 = create_string(m, "hella");
 	if (compare_string(s1, s2) == 0)
-		printf("same!\n");
+		put("same!\n");
 	else if (compare_string(s1, s2) == 1)
-		printf("%s is bigger than %s\n", (char *)s1->addr, (char *)s2->addr);
+	{
+		print_string(s1);
+		put(" is bigger than ");
+		print_string(s2);
+		put(".\n");
+	}
 	else
-		printf("%s is bigger than %s\n", (char *)s2->addr, (char *)s1->addr);
+	{
+		print_string(s2);
+		put(" is bigger than ");
+		print_string(s1);
+		put(".\n");
+	}
 	delete_mem(m);
 	return (0);
 }
