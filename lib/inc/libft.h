@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
-# define rune int32_t
+# define RUNE int32_t
 
 typedef struct s_string
 {
@@ -33,7 +33,7 @@ typedef struct s_string_slice
 
 typedef struct s_rune_slice
 {
-	rune			*runes;
+	RUNE			*runes;
 	size_t			len;
 	size_t			cap;
 }	t_rune_slice;
