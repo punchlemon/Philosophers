@@ -29,5 +29,5 @@ void	print_error(t_error *err)
 	else if (!err->error_string)
 		put("errorStrint is NULL.\n");
 	else
-		put(err->error_string);
+		print_string(err->error_string);
 }
