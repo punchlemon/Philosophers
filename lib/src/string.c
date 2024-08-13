@@ -13,22 +13,22 @@
 #include "libft.h"
 #include <stdint.h>
 
-void	mem_cpy(void *dst, void *src, size_t len)
+void	copy_mem(void *dst, void *src, size_t bytes)
 {
 	size_t	n8;
 	size_t	n4;
 	size_t	n1;
 
-	n8 = len >> 3;
-	n4 = (len & 0b100) >> 2;
-	n1 = len & 0b11;
+	n8 = bytes >> 3;
+	n4 = bytes & 0b100;
+	n1 = bytes & 0b11;
 	while (n8--)
 	{
 		*(uint64_t *)dst = *(uint64_t *)src;
 		dst += 8;
 		src += 8;
 	}
-	while (n4--)
+	if (n4)
 	{
 		*(uint32_t *)dst = *(uint32_t *)src;
 		dst += 4;
@@ -36,6 +36,40 @@ void	mem_cpy(void *dst, void *src, size_t len)
 	}
 	while (n1--)
 		*(uint8_t *)dst++ = *(uint8_t *)src++;
+}
+
+int	compare_byte(int8_t a, int8_t b, size_t n)
+{
+	while (n--)
+		if (a != b)
+			return (((a > b) << 1) - 1);
+	return (0);
+}
+
+int	compare_mem(void *a, void *b, size_t bytes)
+{
+	size_t	n8;
+	size_t	n4;
+	size_t	n1;
+
+	n8 = bytes >> 3;
+	n4 = bytes & 0b100;
+	n1 = bytes & 0b11;
+	while (n8--)
+	{
+		if (*(uint64_t *)a != *(uint64_t *)b)
+			return (((*(uint64_t *)a > *(uint64_t *)b) << 1) - 1);
+		a += 8;
+		b += 8;
+	}
+	if (n4)
+	{
+		if (*(uint32_t *)a != *(uint32_t *)b)
+			return (((*(uint32_t *)a > *(uint32_t *)b) << 1) - 1);
+		a += 4;
+		b += 4;
+	}
+	return (compare_byte(*(int8_t *)a, *(int8_t *)b, n1));
 }
 
 t_string	*create_string(t_mem *m, char *src)
@@ -49,7 +83,7 @@ t_string	*create_string(t_mem *m, char *src)
 	if (!s->len)
 		return (s->addr = NULL, s);
 	append_mem(m, s->addr = malloc(sizeof(char) * s->len));
-	mem_cpy(s->addr, src, s->len);
+	copy_mem(s->addr, src, s->len);
 	return (s);
 }
 
@@ -61,4 +95,14 @@ void	print_string(t_string *str)
 		put(str->addr);
 	else
 		write(1, str->addr, str->len);
+}
+
+int	compare_string(t_string *a, t_string *b)
+{
+	if (a->len > b->len)
+		return (1);
+	else if (a->len < b->len)
+		return (-1);
+	else
+		return (compare_mem(a, b, a->len));
 }

@@ -59,6 +59,7 @@ typedef struct s_mem
 // string function
 t_string	*create_string(t_mem *m, char *src);
 void		print_string(t_string *str);
+int			compare_string(t_string *a, t_string *b);
 
 // error function
 t_error		*create_error(t_mem *m, char *src);
