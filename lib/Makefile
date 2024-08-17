@@ -5,7 +5,8 @@ OBJ_DIR				=	obj
 
 FILES				=	 \
 						error \
-						bytes \
+						copy_bytes \
+						compare_bytes \
 						mem \
 						put \
 						string \
