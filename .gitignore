@@ -1,4 +1,4 @@
 *.o
 *.a
-Philosophers
+template
 valgrind_result.log

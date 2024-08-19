@@ -1,4 +1,4 @@
-NAME				=	Philosophers
+NAME				=	template
 LIB					=	ft
 INC_DIR				=	inc
 SRC_DIR				=	src
