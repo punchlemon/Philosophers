@@ -20,7 +20,7 @@
 
 typedef struct s_string
 {
-	void			*addr;
+	char			*addr;
 	size_t			len;
 }	t_string;
 

@@ -23,6 +23,8 @@ t_string	*create_string(t_mem *m, char *src)
 	if (!s->len)
 		return (s->addr = NULL, s);
 	append_mem(m, s->addr = malloc(sizeof(char) * s->len));
+	if (!s->addr)
+		return (s->len = 0, s);
 	copy_bytes(s->addr, src, s->len);
 	return (s);
 }
