@@ -52,6 +52,8 @@ void	append_mem(t_mem *sep, void *item)
 
 	if (!sep)
 		return ((void)put("sep is NULL."));
+	if (!item)
+		return ;
 	new = malloc(sizeof(t_mem));
 	if (!new)
 		return ((void)put("Can't allocate memory."));
