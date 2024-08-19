@@ -29,7 +29,7 @@ size_t	num_len(int64_t num)
 
 void	copy_num(char *addr, int64_t num, size_t len)
 {
-	if (!addr && len < 21)
+	if (!addr || len > 20)
 		return ;
 	if (num == INT64_MIN)
 		return (copy_bytes(addr, "-9223372036854775808", 20));
