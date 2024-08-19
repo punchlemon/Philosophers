@@ -12,17 +12,24 @@
 
 #include "Philosophers.h"
 
+void	test_put_num(int64_t num)
+{
+	put_num(num);
+	put("\n");
+}
+
 int	main(void)
 {
 	t_mem		*m;
-	t_string	*s1;
-	t_string	*s2;
 
 	m = create_mem();
 	if (!m)
 		return (put("Can't allocate memory!\n"), 1);
-	s1 = create_string(m, "helo");
-	s2 = create_string(m, "hela");
+	test_put_num(INT64_MAX);
+	test_put_num(INT64_MIN);
+	test_put_num(42);
+	test_put_num(-42);
+	test_put_num(0);
 	delete_mem(m);
 	return (0);
 }

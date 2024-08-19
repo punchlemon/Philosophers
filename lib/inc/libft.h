@@ -78,5 +78,6 @@ void		append_mem(t_mem *sep, void *item);
 size_t		str_len(char *src);
 int			put_fd(int fd, char *src);
 int			put(char *src);
+int			put_num(int64_t num);
 
 #endif

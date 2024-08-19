@@ -35,3 +35,27 @@ int	put(char *src)
 {
 	return (put_fd(1, src));
 }
+
+int	put_num(int64_t num)
+{
+	char	buffer[20];
+	char	*ptr;
+	int		is_negative;
+
+	if (num == INT64_MIN)
+		return (write(1, "-9223372036854775808", 20));
+	ptr = buffer + 20;
+	is_negative = num < 0;
+	if (is_negative)
+		num = -num;
+	while (1)
+	{
+		*(--ptr) = '0' + (num % 10);
+		num /= 10;
+		if (num == 0)
+			break ;
+	}
+	if (is_negative)
+		*(--ptr) = '-';
+	return (write(1, ptr, buffer + 20 - ptr));
+}
