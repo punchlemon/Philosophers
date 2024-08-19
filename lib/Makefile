@@ -4,9 +4,9 @@ SRC_DIR				=	src
 OBJ_DIR				=	obj
 
 FILES				=	 \
-						error \
-						copy_bytes \
 						compare_bytes \
+						copy_bytes \
+						error \
 						mem \
 						num \
 						put \

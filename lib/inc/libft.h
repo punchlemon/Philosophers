@@ -60,11 +60,6 @@ typedef struct s_mem
 void		copy_bytes(void *dst, void *src, size_t bytes);
 int			compare_bytes(void *a, void *b, size_t bytes);
 
-// string function
-t_string	*create_string(t_mem *m, char *src);
-void		print_string(t_string *str);
-int			compare_string(t_string *a, t_string *b);
-
 // error function
 t_error		*create_error(t_mem *m, char *src);
 void		print_error(t_error *err);
@@ -77,10 +72,15 @@ void		append_mem(t_mem *sep, void *item);
 // num function
 t_string	*ft_atoi(t_mem *m, int64_t num);
 
-// put.c
+// put function
 size_t		str_len(char *src);
 int			put_fd(int fd, char *src);
 int			put(char *src);
 int			put_num(int64_t num);
+
+// string function
+t_string	*create_string(t_mem *m, char *src);
+void		print_string(t_string *str);
+int			compare_string(t_string *a, t_string *b);
 
 #endif
