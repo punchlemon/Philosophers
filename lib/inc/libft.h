@@ -70,7 +70,7 @@ void		delete_mem(t_mem *sep);
 void		append_mem(t_mem *sep, void *item);
 
 // num function
-t_string	*ft_atoi(t_mem *m, int64_t num);
+t_string	*ft_itoa(t_mem *m, int64_t num);
 
 // put function
 size_t		str_len(char *src);

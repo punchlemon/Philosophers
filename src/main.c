@@ -14,7 +14,7 @@
 
 void	test_put_num(t_mem *m, int64_t num)
 {
-	print_string(ft_atoi(m, num));
+	print_string(ft_itoa(m, num));
 	put("\n");
 }
 

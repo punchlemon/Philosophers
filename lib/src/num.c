@@ -47,7 +47,7 @@ void	copy_num(char *addr, int64_t num, size_t len)
 	}
 }
 
-t_string	*ft_atoi(t_mem *m, int64_t num)
+t_string	*ft_itoa(t_mem *m, int64_t num)
 {
 	t_string	*res;
 
