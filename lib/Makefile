@@ -8,6 +8,7 @@ FILES				=	 \
 						copy_bytes \
 						compare_bytes \
 						mem \
+						num \
 						put \
 						string \
 

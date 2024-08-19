@@ -12,9 +12,9 @@
 
 #include "Philosophers.h"
 
-void	test_put_num(int64_t num)
+void	test_put_num(t_mem *m, int64_t num)
 {
-	put_num(num);
+	print_string(ft_atoi(m, num));
 	put("\n");
 }
 
@@ -25,11 +25,11 @@ int	main(void)
 	m = create_mem();
 	if (!m)
 		return (put("Can't allocate memory!\n"), 1);
-	test_put_num(INT64_MAX);
-	test_put_num(INT64_MIN);
-	test_put_num(42);
-	test_put_num(-42);
-	test_put_num(0);
+	test_put_num(m, INT64_MAX);
+	test_put_num(m, INT64_MIN);
+	test_put_num(m, 42);
+	test_put_num(m, -42);
+	test_put_num(m, 0);
 	delete_mem(m);
 	return (0);
 }

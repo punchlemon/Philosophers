@@ -74,6 +74,9 @@ t_mem		*create_mem(void);
 void		delete_mem(t_mem *sep);
 void		append_mem(t_mem *sep, void *item);
 
+// num function
+t_string	*ft_atoi(t_mem *m, int64_t num);
+
 // put.c
 size_t		str_len(char *src);
 int			put_fd(int fd, char *src);
