@@ -57,8 +57,8 @@ typedef struct s_mem
 // }	t_string_err;
 
 // bytes function
-void	copy_bytes(void *dst, void *src, size_t bytes);
-int		compare_bytes(void *a, void *b, size_t bytes);
+void		copy_bytes(void *dst, void *src, size_t bytes);
+int			compare_bytes(void *a, void *b, size_t bytes);
 
 // string function
 t_string	*create_string(t_mem *m, char *src);

@@ -19,22 +19,22 @@ uint16_t	reverse16(uint16_t value)
 
 uint32_t	reverse32(uint32_t value)
 {
-	return ((value >> 24) |
-		((value >> 8)  & 0x0000FF00) |
-		((value << 8)  & 0x00FF0000) |
-		(value << 24));
+	return ((value >> 24)
+		| ((value >> 8) & 0x0000FF00)
+		| ((value << 8) & 0x00FF0000)
+		| (value << 24));
 }
 
-uint64_t reverse64(uint64_t value)
+uint64_t	reverse64(uint64_t value)
 {
-	return ((value >> 56) |
-		((value >> 40) & 0x000000000000FF00) |
-		((value >> 24) & 0x0000000000FF0000) |
-		((value >> 8)  & 0x00000000FF000000) |
-		((value << 8)  & 0x000000FF00000000) |
-		((value << 24) & 0x0000FF0000000000) |
-		((value << 40) & 0x00FF000000000000) |
-		(value << 56));
+	return ((value >> 56)
+		| ((value >> 40) & 0x000000000000FF00)
+		| ((value >> 24) & 0x0000000000FF0000)
+		| ((value >> 8) & 0x00000000FF000000)
+		| ((value << 8) & 0x000000FF00000000)
+		| ((value << 24) & 0x0000FF0000000000)
+		| ((value << 40) & 0x00FF000000000000)
+		| (value << 56));
 }
 
 int	compare_below_8bytes(void *a, void *b, size_t bytes)
@@ -61,9 +61,8 @@ int	compare_below_8bytes(void *a, void *b, size_t bytes)
 		a += 2;
 		b += 2;
 	}
-	if (bytes & 0b1)
-		return ((*(uint8_t *)a > *(uint8_t *)b) - (*(uint8_t *)a < *(uint8_t *)b));
-	return (0);
+	return ((bytes & 0b1)
+		* (*(uint8_t *)a > *(uint8_t *)b) - (*(uint8_t *)a < *(uint8_t *)b));
 }
 
 int	compare_bytes(void *a, void *b, size_t bytes)
