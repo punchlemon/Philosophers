@@ -14,7 +14,7 @@
 
 void	test_put_num(t_mem *m, char *str)
 {
-	print_string(ft_itoa(m, ft_atoi(*create_string(m, str))));
+	print_string(ft_itoa(m, ft_atoi(create_string(m, str))));
 	put("\n");
 }
 

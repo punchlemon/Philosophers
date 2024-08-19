@@ -81,7 +81,7 @@ t_error		*create_error(t_mem *m, char *src);
 void		print_error(t_error *err);
 
 // ft_itoa function
-int64_t		ft_atoi(t_string str);
+int64_t		ft_atoi(t_string *str);
 
 // ft_itoa function
 t_string	*ft_itoa(t_mem *m, int64_t num);
