@@ -26,6 +26,13 @@ typedef struct s_string
 	size_t			len;
 }	t_string;
 
+typedef struct s_num_slice
+{
+	int64_t			*nums;
+	size_t			len;
+	size_t			cap;
+}	t_num_slice;
+
 typedef struct s_string_slice
 {
 	t_string		*strings;
@@ -39,6 +46,13 @@ typedef struct s_rune_slice
 	size_t			len;
 	size_t			cap;
 }	t_rune_slice;
+
+typedef struct s_byte_slice
+{
+	int8_t			*bytes;
+	size_t			len;
+	size_t			cap;
+}	t_byte_slice;
 
 typedef struct s_error
 {
