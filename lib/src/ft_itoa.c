@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   num.c                                              :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retanaka <retanaka@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 21:58:25 by retanaka          #+#    #+#             */
-/*   Updated: 2024/08/19 21:58:26 by retanaka         ###   ########.fr       */
+/*   Created: 2024/08/20 01:10:49 by retanaka          #+#    #+#             */
+/*   Updated: 2024/08/20 01:10:50 by retanaka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	copy_num(char *addr, int64_t num, size_t len)
 	if (!addr || len > 20)
 		return ;
 	if (num == INT64_MIN)
-		return (copy_bytes(addr, "-9223372036854775808", 20));
+		return (copy_bytes(addr, INTMIN_ADDR, 20));
 	if (num < 0)
 	{
 		*addr = '-';

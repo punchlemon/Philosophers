@@ -7,8 +7,9 @@ FILES				=	 \
 						compare_bytes \
 						copy_bytes \
 						error \
+						ft_atoi \
+						ft_itoa \
 						mem \
-						num \
 						put \
 						string \
 

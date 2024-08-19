@@ -43,7 +43,7 @@ int	put_num(int64_t num)
 	int		is_negative;
 
 	if (num == INT64_MIN)
-		return (write(1, "-9223372036854775808", 20));
+		return (write(1, INTMIN_ADDR, 20));
 	ptr = buffer + 20;
 	is_negative = num < 0;
 	if (is_negative)

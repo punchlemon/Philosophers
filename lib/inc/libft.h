@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdint.h>
 # define RUNE int32_t
+# define INTMIN_ADDR "-9223372036854775808"
+# define INT64_MAX_10 922337203685477580
 
 typedef struct s_string
 {
@@ -64,13 +66,16 @@ int			compare_bytes(void *a, void *b, size_t bytes);
 t_error		*create_error(t_mem *m, char *src);
 void		print_error(t_error *err);
 
+// ft_itoa function
+int64_t		ft_atoi(t_string str);
+
+// ft_itoa function
+t_string	*ft_itoa(t_mem *m, int64_t num);
+
 // mem function
 t_mem		*create_mem(void);
 void		delete_mem(t_mem *sep);
 void		append_mem(t_mem *sep, void *item);
-
-// num function
-t_string	*ft_itoa(t_mem *m, int64_t num);
 
 // put function
 size_t		str_len(char *src);
