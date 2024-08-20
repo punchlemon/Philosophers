@@ -1,4 +1,4 @@
-# :octocat: template
+# :ocean: template
 ---
 > This is template created for use in other 42 projects.
 ## :full_moon_with_face: Demo
