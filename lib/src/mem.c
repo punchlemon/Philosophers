@@ -38,8 +38,7 @@ void	delete_mem(t_mem *sep)
 		if (!m)
 			break ;
 		tmp = m->next;
-		if (m->addr)
-			free(m->addr);
+		free(m->addr);
 		free(m);
 		m = tmp;
 	}
