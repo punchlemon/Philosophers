@@ -41,12 +41,12 @@ make ; ./template
 ## :memo: To-Do
 
 - [ ] [Issue #5: result](https://github.com/punchlemon/template/issues/5) 
-- [ ] [Issue #4: mem tree](https://github.com/punchlemon/template/issues/4) 
-- [ ] [Issue #2: convert rune_slice](https://github.com/punchlemon/template/issues/2) 
+- [ ] [Issue #4: tree structure mem](https://github.com/punchlemon/template/issues/4) 
+- [ ] [Issue #2: rune_slice](https://github.com/punchlemon/template/issues/2) 
 
 ## :rocket: WIP
-- [ ] [Issue #1: convert byte_slice](https://github.com/punchlemon/template/issues/1) 
-- [ ] [Issue #3: start branch](https://github.com/punchlemon/template/issues/3) 
+- [ ] [Issue #1: byte_slice](https://github.com/punchlemon/template/issues/1) 
+- [ ] [Issue #3: branch management](https://github.com/punchlemon/template/issues/3) 
 
 ## :star2: Done
 - [x] Add README.md
