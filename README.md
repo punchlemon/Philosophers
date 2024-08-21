@@ -39,11 +39,11 @@ make ; ./template
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## :memo: To-Do
-- [ ] [Issue #2: convert rune_slice](https//github.com/punchlemon/template/issues/2) 
+- [ ] [Issue #2: convert rune_slice](https://github.com/punchlemon/template/issues/2) 
 
 ## :rocket: WIP
-- [ ] [Issue #1: convert byte_slice](https//github.com/punchlemon/template/issues/1) 
-- [ ] [Issue #3: start branch](https//github.com/punchlemon/template/issues/3) 
+- [ ] [Issue #1: convert byte_slice](https://github.com/punchlemon/template/issues/1) 
+- [ ] [Issue #3: start branch](https://github.com/punchlemon/template/issues/3) 
 
 ## :star2: Done
 - [x] Add README.md
