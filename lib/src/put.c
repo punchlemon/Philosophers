@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	str_len(char *src)
+size_t	ft_strlen(char *src)
 {
 	size_t	len;
 
@@ -28,7 +28,7 @@ int	put_fd(int fd, char *src)
 {
 	if (!src)
 		return (write(fd, "(null)\n", 7));
-	return (write(fd, src, str_len(src)));
+	return (write(fd, src, ft_strlen(src)));
 }
 
 int	put(char *src)

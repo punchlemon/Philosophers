@@ -49,13 +49,14 @@ void	copy_num(char *addr, int64_t num, size_t len)
 
 t_string	*ft_itoa(t_mem *m, int64_t num)
 {
-	t_string	*res;
+	t_string	*str;
+	t_result	res;
 
-	res = create_string(m, NULL);
-	res->len = num_len(num);
-	append_mem(m, res->addr = malloc(sizeof(char) * res->len));
-	if (!res->addr)
-		return (res->len = 0, res);
-	copy_num(res->addr, num, res->len);
-	return (res);
+	str = create_string(ir(&res), m, NULL)->v;
+	str->len = num_len(num);
+	append_mem(m, str->addr = malloc(sizeof(char) * str->len));
+	if (!str->addr)
+		return (str->len = 0, str);
+	copy_num(str->addr, num, str->len);
+	return (str);
 }

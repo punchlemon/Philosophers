@@ -11,6 +11,7 @@ FILES				=	 \
 						ft_itoa \
 						mem \
 						put \
+						result \
 						string \
 
 CC					=	cc
