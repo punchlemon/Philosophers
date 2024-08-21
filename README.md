@@ -46,9 +46,9 @@ make ; ./template
 
 ## :rocket: WIP
 - [ ] [Issue #1: byte_slice](https://github.com/punchlemon/template/issues/1) 
-- [ ] [Issue #3: branch management](https://github.com/punchlemon/template/issues/3) 
 
 ## :star2: Done
+- [x] [Issue #3: branch management](https://github.com/punchlemon/template/issues/3) 
 - [x] Add README.md
 - [x] Manage using issues
 - [x] ft_atoi with `String` support
