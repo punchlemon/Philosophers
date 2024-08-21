@@ -39,6 +39,9 @@ make ; ./template
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## :memo: To-Do
+
+- [ ] [Issue #5: result](https://github.com/punchlemon/template/issues/5) 
+- [ ] [Issue #4: mem tree](https://github.com/punchlemon/template/issues/4) 
 - [ ] [Issue #2: convert rune_slice](https://github.com/punchlemon/template/issues/2) 
 
 ## :rocket: WIP
