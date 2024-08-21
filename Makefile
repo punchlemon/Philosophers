@@ -8,7 +8,7 @@ LIB_DIR				=	lib
 FILES				=	 \
 						main \
 
-CC					=	gcc
+CC					=	cc
 CFLAGS				=	-Wall -Werror -Wextra -g
 IFLAGS				=	-I$(INC_DIR) -Imlx -I/usr/include -I$(LIB_DIR)/$(INC_DIR)
 LFLAGS				=	-L$(LIB_DIR) -l$(LIB)

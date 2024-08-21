@@ -13,7 +13,7 @@ FILES				=	 \
 						put \
 						string \
 
-CC					=	gcc
+CC					=	cc
 AR					=	ar
 CFLAGS				=	-Wall -Werror -Wextra
 ARFLAGS				=	rcs
